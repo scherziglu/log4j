@@ -6,6 +6,7 @@
   <name>Log4j 2 extensions</name>
   <description>extensions for Log4j 2</description>
   <packaging>jar</packaging>
+  
   <developers>
     <developer>
       <id>scherziglu</id>
@@ -14,16 +15,45 @@
       <timezone>Europe/Berlin</timezone>
     </developer>
   </developers>
+  
+  <properties>
+    <jdk.version>1.7</jdk.version>
+    <log4j.version>2.0-rc2-SNAPSHOT</log4j.version>
+    <solr.version>4.7.2</solr.version>
+  </properties>
+  
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
+          <configuration>
+            <source>${jdk.version}</source>
+            <target>${jdk.version}</target>
+            <showDeprecation>true</showDeprecation>
+            <showWarnings>true</showWarnings>
+            <compilerArguments>
+              <Xmaxwarns>10000</Xmaxwarns>
+              <Xlint />
+            </compilerArguments>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  
   <dependencies>
   	<dependency>
   		<groupId>org.apache.logging.log4j</groupId>
   		<artifactId>log4j-core</artifactId>
-  		<version>2.0-rc2-SNAPSHOT</version>
+  		<version>${log4j.version}</version>
   	</dependency>
   	<dependency>
   		<groupId>org.apache.solr</groupId>
   		<artifactId>solr-core</artifactId>
-  		<version>4.7.2</version>
+  		<version>${solr.version}</version>
   		<exclusions>
         	<exclusion>
           	  	<artifactId>jdk.tools</artifactId>
@@ -74,4 +104,5 @@
   		<scope>test</scope>
   	</dependency>
   </dependencies>
+
 </project>
