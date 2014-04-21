@@ -1,0 +1,16 @@
+Code
+ - pom.xml 	- 	general
+ - log4j.xml & EmbeddedSolr - relative path to solr_home
+Documentation
+Tests
+ - TestSolrConnection ???
+ - TestSolrAppender - validate solr index / how to start a solr via java
+ - Test CloudSolrServer with real SolrCloud
+ - Test EmbeddedSolr with real EmbeddedSolr
+
+ 
+ 
+ Next Features/Steps
+  - Filter/Formatter with field mapping: logevent field -> solr field
+  - Filter which only passes Solr search/update requests
+  - Filter/Formatter which allows to ectract information - like hits, QTime - from the message 

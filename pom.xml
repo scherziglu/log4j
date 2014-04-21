@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>log4j.extensions</groupId>
+  <artifactId>log4j-extensions</artifactId>
+  <version>1.0.0</version>
+  <name>Log4jLog4j extensions</name>
+  <description>extensions for Log4j</description>
+  <packaging>pom</packaging>
+  <developers>
+    <developer>
+      <id>scherziglu</id>
+      <name>Markus Klose</name>
+      <email>ich@markus-klose.de</email>
+      <timezone>Europe/Berlin</timezone>
+    </developer>
+  </developers>
+  <properties>
+    <solr.version>4.7.2</solr.version>
+  </properties>
+  <modules>
+    <module>log4j-2</module>
+  </modules>
+</project>
