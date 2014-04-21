@@ -11,3 +11,8 @@
 *.lai
 *.la
 *.a
+
+# eclipse settings
+.project
+.settings
+target
