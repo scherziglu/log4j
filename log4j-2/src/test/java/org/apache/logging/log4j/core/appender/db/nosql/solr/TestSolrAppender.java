@@ -107,7 +107,7 @@ public class TestSolrAppender {
 		String appenderDescription = context.getLogger("EmbeddedSolrServer").getAppenders().get("EmbeddedSolrServerAppender").toString();
 		
 		assertNotNull(context.getLogger("EmbeddedSolrServer"));
-		assertTrue(appenderDescription.contains("provider=solr{ EmbeddedSolrServer(\"./solr_home\", \"collection1\") }"));
+		assertTrue(appenderDescription.contains("provider=solr{ EmbeddedSolrServer(\"./target/test-classes/solr_home\", \"collection1\") }"));
 	}
 	
 
