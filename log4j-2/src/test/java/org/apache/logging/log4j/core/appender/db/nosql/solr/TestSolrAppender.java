@@ -113,6 +113,7 @@ public class TestSolrAppender {
 //	@Test
 	public void testSendLogEvents() {
 		// this is not a real test ... it is just for validating the output in solr
+		// to run this test unzip "solrCloud.zip" and start startZooKeeper.bat and startSolr.bat
 		
 		// send log event to HttpSolrServer
 		context.getLogger("HttpSolrServer").log(Level.DEBUG, "--- HttpSolrServer: This is a logging message.");
