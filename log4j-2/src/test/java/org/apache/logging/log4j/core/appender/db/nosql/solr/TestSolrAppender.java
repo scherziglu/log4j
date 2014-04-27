@@ -40,7 +40,6 @@ public class TestSolrAppender {
 			// init context
 			context = (LoggerContext) LogManager.getContext();
 			context.start(configuration);
-			context.updateLoggers();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
