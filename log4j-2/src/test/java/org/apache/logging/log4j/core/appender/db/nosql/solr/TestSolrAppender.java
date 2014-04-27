@@ -14,7 +14,7 @@ import org.apache.logging.log4j.core.LoggerContext;
 import org.apache.logging.log4j.core.config.Configuration;
 import org.apache.logging.log4j.core.config.ConfigurationFactory;
 import org.apache.logging.log4j.core.config.ConfigurationFactory.ConfigurationSource;
-import org.apache.logging.log4j.core.config.xml.XMLConfigurationFactory;
+import org.apache.logging.log4j.core.config.XMLConfigurationFactory;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;

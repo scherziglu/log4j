@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>log4j.extensions</groupId>
+  <groupId>log4j</groupId>
   <artifactId>log4j-2</artifactId>
   <version>0.1.0</version>
   <name>Log4j 2 extensions</name>
@@ -18,7 +18,7 @@
   
   <properties>
     <jdk.version>1.7</jdk.version>
-    <log4j.version>2.0-rc2-SNAPSHOT</log4j.version>
+    <log4j.version>2.0-rc1</log4j.version>
     <solr.version>4.7.2</solr.version>
   </properties>
   

@@ -1,12 +1,9 @@
 Code
- - pom.xml 	- 	general
- - log4j.xml & EmbeddedSolr - relative path to solr_home
 Documentation
 Tests
  - TestSolrConnection ???
- - TestSolrAppender - validate solr index / how to start a solr via java
+ - TestSolrAppender - validate events in solr index 
  - Test CloudSolrServer with real SolrCloud
- - Test EmbeddedSolr with real EmbeddedSolr
 
  
  

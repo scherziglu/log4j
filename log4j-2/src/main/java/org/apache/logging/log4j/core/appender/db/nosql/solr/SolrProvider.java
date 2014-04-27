@@ -194,14 +194,9 @@ public final class SolrProvider implements NoSQLProvider<SolrConnection> {
     /**
  	 * create SolrProvider with EmbeddedSolrServer.
  	 */ 
-     private static SolrProvider getEmbeddedSolrServer(String solrHome, String coreName, int commitWithinMs) {
-    	 //TODO relative path of solrHome
-//    	 if (!new File(solrHome).exists()) {
-//    		 String currentPath = "C:/mk";
-//    		 solrHome = new File (currentPath + solrHome).getCanonicalPath();
-//    	 }
-    	 
+     private static SolrProvider getEmbeddedSolrServer(String solrHome, String coreName, int commitWithinMs) {    	 
     	 CoreContainer coreContainer = new CoreContainer(solrHome);
+    	 coreContainer.load();
     	 String description = "EmbeddedSolrServer(\"" + solrHome + "\", \"" + coreName + "\")";
  		
     	 return new SolrProvider(new EmbeddedSolrServer(coreContainer, coreName), commitWithinMs, description);

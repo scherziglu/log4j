@@ -24,7 +24,7 @@
 		<Solr zkHost="zooKeeper:2181" coreName="collection1"/>
  	</NoSql>
  	<NoSql name="EmbeddedSolrServerAppender">
- 		<Solr solrHome="./solr_home" coreName="collection1"/>
+ 		<Solr solrHome="./target/test-classes/solr_home" coreName="collection1"/>
  	</NoSql>
  	
         
