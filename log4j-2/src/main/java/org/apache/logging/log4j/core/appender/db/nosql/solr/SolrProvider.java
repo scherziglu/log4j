@@ -42,11 +42,15 @@ public final class SolrProvider implements NoSQLProvider<SolrConnection> {
     
 	// solr server instance to log to
     private final SolrServer solrServer;
+    
     // amount of time before commit is done
     private int commitWithinMs;
     
     // description of the solr provider
     private final String description;
+    
+    // default coreName
+    private static String DEFAULT_CORENAME = "collection1";
     
     /**
      * constructor of the SolrProvider.
@@ -183,10 +187,12 @@ public final class SolrProvider implements NoSQLProvider<SolrConnection> {
 		String description = "CloudSolrServer(\"" + zkHost + "\")";
 		
 		// handle coreName
-		if (coreName != null && coreName.length() > 0)  {
-			((CloudSolrServer)solrServer).setDefaultCollection(coreName);
-			description += ".setDefaultCollection(\"" + coreName + "\")";
+		if (coreName == null || coreName.length() == 0)  {
+			coreName = DEFAULT_CORENAME;
     	}
+		((CloudSolrServer)solrServer).setDefaultCollection(coreName);
+		description += ".setDefaultCollection(\"" + coreName + "\")";
+		
 		
 		return new SolrProvider(solrServer, commitWithinMs, description);
     }

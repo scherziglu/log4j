@@ -91,7 +91,7 @@ public class TestSolrAppender {
 		String appenderDescription = context.getLogger("CloudSolrServer").getAppenders().get("CloudSolrServerAppender").toString();
 		
 		assertNotNull(context.getLogger("CloudSolrServer"));
-		assertTrue(appenderDescription.contains("provider=solr{ CloudSolrServer(\"zooKeeper:2181\") }"));
+		assertTrue(appenderDescription.contains("provider=solr{ CloudSolrServer(\"localhost:2181\").setDefaultCollection(\"collection1\") }"));
 	}
 	
 	@Test
@@ -99,7 +99,7 @@ public class TestSolrAppender {
 		String appenderDescription = context.getLogger("CloudSolrServerWithCore").getAppenders().get("CloudSolrServerWithCoreAppender").toString();
 		
 		assertNotNull(context.getLogger("CloudSolrServerWithCore"));
-		assertTrue(appenderDescription.contains("provider=solr{ CloudSolrServer(\"zooKeeper:2181\").setDefaultCollection(\"collection1\") }"));
+		assertTrue(appenderDescription.contains("provider=solr{ CloudSolrServer(\"localhost:2181\").setDefaultCollection(\"collection1\") }"));
 	}
 	
 	@Test
@@ -134,8 +134,7 @@ public class TestSolrAppender {
 		context.getLogger("CloudSolrServerWithCore").log(Level.DEBUG, "--- CloudSolrServerWithCore: This is a logging message.");
 		context.getLogger("CloudSolrServerWithCore").log(Level.DEBUG, "--- CloudSolrServerWithCore: This is a second logging message.");
 		// send log event to EmbeddedSolrServer
-		//TODO relative path
-//		context.getLogger("EmbeddedSolrServer").log(Level.DEBUG, "--- EmbeddedSolrServer: This is a logging message.");
-//		context.getLogger("EmbeddedSolrServer").log(Level.DEBUG, "--- EmbeddedSolrServer: This is a second logging message.");
+		context.getLogger("EmbeddedSolrServer").log(Level.DEBUG, "--- EmbeddedSolrServer: This is a logging message.");
+		context.getLogger("EmbeddedSolrServer").log(Level.DEBUG, "--- EmbeddedSolrServer: This is a second logging message.");
 	}
 }

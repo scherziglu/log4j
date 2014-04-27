@@ -84,11 +84,11 @@ public class TestSolrProvider {
 		assertNull(this.solrProvider);
 						
 		// create provider
-		this.solrProvider = SolrProvider.createNoSQLProvider(null, null, null, null, "zooKeeper:2181", null);
+		this.solrProvider = SolrProvider.createNoSQLProvider(null, null, null, null, "localhost:2181", null);
 						
 		// test provider
 		assertNotNull(this.solrProvider);
-		assertEquals("solr{ CloudSolrServer(\"zooKeeper:2181\") }", this.solrProvider.toString());
+		assertEquals("solr{ CloudSolrServer(\"localhost:2181\").setDefaultCollection(\"collection1\") }", this.solrProvider.toString());
 	}
 	
 	@Test
@@ -97,11 +97,11 @@ public class TestSolrProvider {
 		assertNull(this.solrProvider);
 						
 		// create provider
-		this.solrProvider = SolrProvider.createNoSQLProvider("myCore", null, null, null, "zooKeeper:2181", null);
+		this.solrProvider = SolrProvider.createNoSQLProvider("myCore", null, null, null, "localhost:2181", null);
 						
 		// test provider
 		assertNotNull(this.solrProvider);
-		assertEquals("solr{ CloudSolrServer(\"zooKeeper:2181\").setDefaultCollection(\"myCore\") }", this.solrProvider.toString());
+		assertEquals("solr{ CloudSolrServer(\"localhost:2181\").setDefaultCollection(\"myCore\") }", this.solrProvider.toString());
 	}
 
 	@Test
