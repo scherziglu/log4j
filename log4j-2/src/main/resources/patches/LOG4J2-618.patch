@@ -1,8 +1,34 @@
-diff --git a/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrConnection.java b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrConnection.java
+diff --git a/log4j-nosql/pom.xml b/log4j-nosql/pom.xml
+index 93bff4a..eee842c 100644
+--- a/log4j-nosql/pom.xml
++++ b/log4j-nosql/pom.xml
+@@ -50,6 +50,21 @@
+       <artifactId>lightcouch</artifactId>
+       <optional>true</optional>
+     </dependency>
++    
++    <!-- dependency for the SolrAppender -->
++    <dependency>
++  	  <groupId>org.apache.solr</groupId>
++  	  <artifactId>solr-core</artifactId>
++  	  <!--<version>${solr.version}</version>-->
++  	  <version>4.7.2</version>
++  	  <exclusions>
++        <exclusion>
++          <artifactId>jdk.tools</artifactId>
++          <groupId>jdk.tools</groupId>
++        </exclusion>
++      </exclusions>
++  	</dependency>
++    
+     <dependency>
+       <groupId>junit</groupId>
+       <artifactId>junit</artifactId>
+diff --git a/log4j-nosql/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrConnection.java b/log4j-nosql/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrConnection.java
 new file mode 100644
 index 0000000..c1bd3d6
 --- /dev/null
-+++ b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrConnection.java
++++ b/log4j-nosql/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrConnection.java
 @@ -0,0 +1,99 @@
 +/*
 + * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -103,11 +129,11 @@ index 0000000..c1bd3d6
 +        return false;
 +    }
 +}
-diff --git a/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrObject.java b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrObject.java
+diff --git a/log4j-nosql/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrObject.java b/log4j-nosql/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrObject.java
 new file mode 100644
 index 0000000..e6ad0af
 --- /dev/null
-+++ b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrObject.java
++++ b/log4j-nosql/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrObject.java
 @@ -0,0 +1,77 @@
 +/*
 + * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -186,11 +212,11 @@ index 0000000..e6ad0af
 +        return this.solrDoc;
 +    }
 +}
-diff --git a/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrProvider.java b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrProvider.java
+diff --git a/log4j-nosql/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrProvider.java b/log4j-nosql/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrProvider.java
 new file mode 100644
 index 0000000..4db187d
 --- /dev/null
-+++ b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrProvider.java
++++ b/log4j-nosql/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrProvider.java
 @@ -0,0 +1,229 @@
 +/*
 + * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -421,11 +447,11 @@ index 0000000..4db187d
 +                commitWithinMs, description);
 +    }
 +}
-diff --git a/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrConnection.java b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrConnection.java
+diff --git a/log4j-nosql/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrConnection.java b/log4j-nosql/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrConnection.java
 new file mode 100644
 index 0000000..f847324
 --- /dev/null
-+++ b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrConnection.java
++++ b/log4j-nosql/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrConnection.java
 @@ -0,0 +1,20 @@
 +package org.apache.logging.log4j.core.appender.db.nosql.solr;
 +
@@ -447,11 +473,11 @@ index 0000000..f847324
 +
 +    // TODO what to test ???
 +}
-diff --git a/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrObject.java b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrObject.java
+diff --git a/log4j-nosql/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrObject.java b/log4j-nosql/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrObject.java
 new file mode 100644
 index 0000000..ae746cb
 --- /dev/null
-+++ b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrObject.java
++++ b/log4j-nosql/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrObject.java
 @@ -0,0 +1,145 @@
 +package org.apache.logging.log4j.core.appender.db.nosql.solr;
 +
@@ -598,11 +624,11 @@ index 0000000..ae746cb
 +        assertNull(this.solrObject.unwrap().getFieldValue("d"));
 +    }
 +}
-diff --git a/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrProvider.java b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrProvider.java
+diff --git a/log4j-nosql/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrProvider.java b/log4j-nosql/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrProvider.java
 new file mode 100644
 index 0000000..ce00ea4
 --- /dev/null
-+++ b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrProvider.java
++++ b/log4j-nosql/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrProvider.java
 @@ -0,0 +1,179 @@
 +package org.apache.logging.log4j.core.appender.db.nosql.solr;
 +
@@ -783,11 +809,76 @@ index 0000000..ce00ea4
 +        assertNull(this.solrProvider);
 +    }
 +}
-diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.html b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.html
+diff --git a/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/log4j2.xml b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/log4j2.xml
+new file mode 100644
+index 0000000..71fb741
+--- /dev/null
++++ b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/log4j2.xml
+@@ -0,0 +1,58 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<Configuration status="DEBUG">
++  <Appenders>
++    <Console name="Console" target="SYSTEM_OUT">
++      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
++    </Console>
++
++ 	<NoSql name="HttpSolrServerAppender">
++		<Solr url="http://localhost:8983/solr" commitWithinMs="1000"/>
++ 	</NoSql>
++  	<NoSql name="HttpSolrServerWithCoreAppender">
++		<Solr url="http://localhost:8983/solr" coreName="collection1" commitWithinMs="1000"/>
++ 	</NoSql>
++ 	<NoSql name="LBHttpSolrServerAppender">
++		<Solr solrServerUrls="http://localhost:8983/solr,http://localhost:8984/solr" commitWithinMs="1000"/>
++ 	</NoSql>
++ 	<NoSql name="LBHttpSolrServerWithCoreAppender">
++		<Solr solrServerUrls="http://localhost:8983/solr,http://localhost:8984/solr" coreName="collection1" commitWithinMs="1000"/>
++ 	</NoSql>
++ 	<NoSql name="CloudSolrServerAppender">
++		<Solr zkHost="localhost:2181" commitWithinMs="1000"/>
++ 	</NoSql>
++ 	<NoSql name="CloudSolrServerWithCoreAppender">
++		<Solr zkHost="localhost:2181" coreName="collection1" commitWithinMs="1000"/>
++ 	</NoSql>
++ 	<NoSql name="EmbeddedSolrServerAppender">
++ 		<Solr solrHome="./target/test-classes/solr_home" coreName="collection1" commitWithinMs="1000"/>
++ 	</NoSql>
++ 	
++        
++  </Appenders>
++  <Loggers>
++    <Root level="DEBUG">
++      <AppenderRef ref="Console" level="DEBUG"/>
++    </Root>
++    <Logger name="HttpSolrServer" level="DEBUG">
++		<AppenderRef ref="HttpSolrServerAppender"/>
++	</Logger>	
++	<Logger name="HttpSolrServerWithCore" level="DEBUG">
++		<AppenderRef ref="HttpSolrServerWithCoreAppender"/>
++	</Logger>
++	<Logger name="LBHttpSolrServer" level="DEBUG">
++		<AppenderRef ref="LBHttpSolrServerAppender"/>
++	</Logger>
++	<Logger name="LBHttpSolrServerWithCore" level="DEBUG">
++		<AppenderRef ref="LBHttpSolrServerWithCoreAppender"/>
++	</Logger>
++	<Logger name="CloudSolrServer" level="DEBUG">
++		<AppenderRef ref="CloudSolrServerAppender"/>
++	</Logger>
++	<Logger name="CloudSolrServerWithCore" level="DEBUG">
++		<AppenderRef ref="CloudSolrServerWithCoreAppender"/>
++	</Logger>
++	<Logger name="EmbeddedSolrServer" level="DEBUG">
++		<AppenderRef ref="EmbeddedSolrServerAppender"/>
++	</Logger>
++  </Loggers>
++</Configuration>
+\ No newline at end of file
+diff --git a/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.html b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.html
 new file mode 100644
 index 0000000..8f2b32a
 --- /dev/null
-+++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.html
++++ b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.html
 @@ -0,0 +1,24 @@
 +<!--
 + Licensed to the Apache Software Foundation (ASF) under one or more
@@ -813,11 +904,11 @@ index 0000000..8f2b32a
 +<img src="img/ico/construction.png"> This line will appear at the top-
 +right box on collection1's Overview
 +-->
-diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-bottom.html b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-bottom.html
+diff --git a/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-bottom.html b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-bottom.html
 new file mode 100644
 index 0000000..5f5eddd
 --- /dev/null
-+++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-bottom.html
++++ b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-bottom.html
 @@ -0,0 +1,25 @@
 +<!--
 + Licensed to the Apache Software Foundation (ASF) under one or more
@@ -844,11 +935,11 @@ index 0000000..5f5eddd
 +  </a>
 +</li>
 +-->
-diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-top.html b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-top.html
+diff --git a/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-top.html b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-top.html
 new file mode 100644
 index 0000000..6c980eb
 --- /dev/null
-+++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-top.html
++++ b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-top.html
 @@ -0,0 +1,25 @@
 +<!--
 + Licensed to the Apache Software Foundation (ASF) under one or more
@@ -875,11 +966,11 @@ index 0000000..6c980eb
 +  </a>
 +</li>
 +-->
-diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/schema.xml b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/schema.xml
+diff --git a/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/schema.xml b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/schema.xml
 new file mode 100644
 index 0000000..97c25cf
 --- /dev/null
-+++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/schema.xml
++++ b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/schema.xml
 @@ -0,0 +1,173 @@
 +<?xml version="1.0" encoding="UTF-8" ?>
 +<!--
@@ -1054,11 +1145,11 @@ index 0000000..97c25cf
 + </types>
 +
 +</schema>
-diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/solrconfig.xml b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/solrconfig.xml
+diff --git a/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/solrconfig.xml b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/solrconfig.xml
 new file mode 100644
 index 0000000..ad040c4
 --- /dev/null
-+++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/solrconfig.xml
++++ b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/solrconfig.xml
 @@ -0,0 +1,209 @@
 +<?xml version="1.0" encoding="UTF-8" ?>
 +<!--
@@ -1269,18 +1360,18 @@ index 0000000..ad040c4
 +  </admin>
 +
 +</config>
-diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/core.properties b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/core.properties
+diff --git a/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/core.properties b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/core.properties
 new file mode 100644
 index 0000000..a70b08d
 --- /dev/null
-+++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/core.properties
++++ b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/core.properties
 @@ -0,0 +1 @@
 +name=collection1
-diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/solr.xml b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/solr.xml
+diff --git a/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/solr.xml b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/solr.xml
 new file mode 100644
 index 0000000..e8bdfb4
 --- /dev/null
-+++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/solr.xml
++++ b/log4j-nosql/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/solr.xml
 @@ -0,0 +1,45 @@
 +<?xml version="1.0" encoding="UTF-8" ?>
 +<!--
@@ -1326,4 +1417,4 @@ index 0000000..e8bdfb4
 +    <int name="connTimeout">${connTimeout:0}</int>
 +  </shardHandlerFactory>
 +
-+</solr>
++</solr>
