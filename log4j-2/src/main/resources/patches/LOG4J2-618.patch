@@ -1,0 +1,1453 @@
+diff --git a/log4j-core/.classpath b/log4j-core/.classpath
+new file mode 100644
+index 0000000..4d455a3
+--- /dev/null
++++ b/log4j-core/.classpath
+@@ -0,0 +1,36 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry kind="src" output="target/classes" path="src/main/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="output" path="target/classes"/>
++</classpath>
+diff --git a/log4j-core/.gitignore b/log4j-core/.gitignore
+new file mode 100644
+index 0000000..b83d222
+--- /dev/null
++++ b/log4j-core/.gitignore
+@@ -0,0 +1 @@
++/target/
+diff --git a/log4j-core/.project b/log4j-core/.project
+new file mode 100644
+index 0000000..ac362ee
+--- /dev/null
++++ b/log4j-core/.project
+@@ -0,0 +1,37 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<projectDescription>
++	<name>log4j-core</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.wst.common.project.facet.core.builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.wst.validation.validationbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.m2e.core.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.pde.PluginNature</nature>
++		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
++		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.eclipse.m2e.core.maven2Nature</nature>
++		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
++	</natures>
++</projectDescription>
+diff --git a/log4j-core/.settings/org.eclipse.core.resources.prefs b/log4j-core/.settings/org.eclipse.core.resources.prefs
+new file mode 100644
+index 0000000..04cfa2c
+--- /dev/null
++++ b/log4j-core/.settings/org.eclipse.core.resources.prefs
+@@ -0,0 +1,6 @@
++eclipse.preferences.version=1
++encoding//src/main/java=UTF-8
++encoding//src/main/resources=UTF-8
++encoding//src/test/java=UTF-8
++encoding//src/test/resources=UTF-8
++encoding/<project>=UTF-8
+diff --git a/log4j-core/.settings/org.eclipse.jdt.core.prefs b/log4j-core/.settings/org.eclipse.jdt.core.prefs
+new file mode 100644
+index 0000000..62a317c
+--- /dev/null
++++ b/log4j-core/.settings/org.eclipse.jdt.core.prefs
+@@ -0,0 +1,8 @@
++eclipse.preferences.version=1
++org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
++org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.6
++org.eclipse.jdt.core.compiler.compliance=1.6
++org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
++org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
++org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
++org.eclipse.jdt.core.compiler.source=1.6
+diff --git a/log4j-core/.settings/org.eclipse.m2e.core.prefs b/log4j-core/.settings/org.eclipse.m2e.core.prefs
+new file mode 100644
+index 0000000..14b697b
+--- /dev/null
++++ b/log4j-core/.settings/org.eclipse.m2e.core.prefs
+@@ -0,0 +1,4 @@
++activeProfiles=
++eclipse.preferences.version=1
++resolveWorkspaceProjects=true
++version=1
+diff --git a/log4j-core/.settings/org.eclipse.pde.core.prefs b/log4j-core/.settings/org.eclipse.pde.core.prefs
+new file mode 100644
+index 0000000..394603c
+--- /dev/null
++++ b/log4j-core/.settings/org.eclipse.pde.core.prefs
+@@ -0,0 +1,2 @@
++BUNDLE_ROOT_PATH=target/classes
++eclipse.preferences.version=1
+diff --git a/log4j-core/.settings/org.eclipse.wst.common.component b/log4j-core/.settings/org.eclipse.wst.common.component
+new file mode 100644
+index 0000000..296886c
+--- /dev/null
++++ b/log4j-core/.settings/org.eclipse.wst.common.component
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
++    <wb-module deploy-name="log4j-core">
++        <wb-resource deploy-path="/" source-path="/src/main/java" tag="defaultRootSource"/>
++        <wb-resource deploy-path="/" source-path="/src/main/resources"/>
++    </wb-module>
++</project-modules>
+diff --git a/log4j-core/.settings/org.eclipse.wst.common.project.facet.core.xml b/log4j-core/.settings/org.eclipse.wst.common.project.facet.core.xml
+new file mode 100644
+index 0000000..3471497
+--- /dev/null
++++ b/log4j-core/.settings/org.eclipse.wst.common.project.facet.core.xml
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<faceted-project>
++  <installed facet="java" version="1.6"/>
++  <installed facet="jst.webfragment" version="3.0"/>
++</faceted-project>
+diff --git a/log4j-core/pom.xml b/log4j-core/pom.xml
+index d077e2f..5da5661 100644
+--- a/log4j-core/pom.xml
++++ b/log4j-core/pom.xml
+@@ -114,6 +114,19 @@
+       <scope>compile</scope>
+       <optional>true</optional>
+     </dependency>
++    <!-- Required for Solr NoSQLAppender -->
++    <dependency>
++  		<groupId>org.apache.solr</groupId>
++  		<artifactId>solr-core</artifactId>
++<!--   		<version>${solr.version}</version> -->
++  		<version>4.7.2</version>
++  		<exclusions>
++        	<exclusion>
++          	  	<artifactId>jdk.tools</artifactId>
++            	<groupId>jdk.tools</groupId>
++        	</exclusion>
++   		</exclusions>
++  	</dependency>
+ 
+     <!-- TEST DEPENDENCIES -->
+ 
+diff --git a/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrConnection.java b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrConnection.java
+new file mode 100644
+index 0000000..cffcd4c
+--- /dev/null
++++ b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrConnection.java
+@@ -0,0 +1,93 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements. See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache license, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License. You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the license for the specific language governing permissions and
++ * limitations under the license.
++ */
++package org.apache.logging.log4j.core.appender.db.nosql.solr;
++
++import java.io.IOException;
++
++import org.apache.logging.log4j.core.appender.AppenderLoggingException;
++import org.apache.logging.log4j.core.appender.db.nosql.NoSQLConnection;
++import org.apache.logging.log4j.core.appender.db.nosql.NoSQLObject;
++import org.apache.solr.client.solrj.SolrServer;
++import org.apache.solr.client.solrj.SolrServerException;
++import org.apache.solr.client.solrj.response.UpdateResponse;
++import org.apache.solr.common.SolrInputDocument;
++
++/**
++ * The Apache Solr implementation of {@link NoSQLConnection}.
++ * @author Markus Klose
++ */
++public final class SolrConnection implements NoSQLConnection<SolrInputDocument, SolrObject> {
++	// solr server instance to log to
++	private final SolrServer solrServer;
++	//  amount of time before commit is done
++	private int commitWithinMs;
++	
++    /**
++     * default constructor.
++     * 
++     * @param solrServer
++     * 	solr server instance to log to
++     * @param commitWithinMs
++     * 	amount of time before commit is done
++     */
++    public SolrConnection(final SolrServer solrServer, int commitWithinMs) {
++        this.solrServer = solrServer;
++        this.commitWithinMs = commitWithinMs;
++    }
++
++    @Override
++    public SolrObject createObject() {
++        return new SolrObject();
++    }
++
++    @Override
++    public SolrObject[] createList(final int length) {
++        return new SolrObject[length];
++    }
++
++    @Override
++    public void insertObject(final NoSQLObject<SolrInputDocument> object) {
++    	try {
++    		UpdateResponse response;
++    		// if commitWithinMs was specified ... use it
++    		if (commitWithinMs < 0) {
++    			response = this.solrServer.add(object.unwrap());
++    		} else {
++    			response = this.solrServer.add(object.unwrap(), commitWithinMs);
++    		}
++    		
++    		// check if solr response shows error
++			if (response.getStatus() !=  0) {
++				throw new AppenderLoggingException("Failed to write log event to Solr. Request Status is: " + response.getStatus());
++			}
++		} catch (SolrServerException e) {
++			throw new AppenderLoggingException("Failed to write log event to Solr due to error: " + e.getMessage(), e);
++		} catch (IOException e) {
++			throw new AppenderLoggingException("Failed to write log event to Solr due to error: " + e.getMessage(), e);
++		}
++    }
++
++    @Override
++    public synchronized void close() {
++    	// there is nothing to do 
++    }
++
++    @Override
++    public synchronized boolean isClosed() {
++    	return false;
++    }
++}
+diff --git a/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrObject.java b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrObject.java
+new file mode 100644
+index 0000000..f461696
+--- /dev/null
++++ b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrObject.java
+@@ -0,0 +1,76 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements. See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache license, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License. You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the license for the specific language governing permissions and
++ * limitations under the license.
++ */
++package org.apache.logging.log4j.core.appender.db.nosql.solr;
++
++import java.util.ArrayList;
++import java.util.Arrays;
++import org.apache.logging.log4j.core.appender.db.nosql.NoSQLObject;
++import org.apache.solr.common.SolrInputDocument;
++
++/**
++ * The Apache Solr implementation of {@link NoSQLObject}.
++ * its a wrapper class for the SolrInputDocument.
++ * @author Markus Klose
++ */
++public final class SolrObject implements NoSQLObject<SolrInputDocument> {
++    // solr document
++	private final SolrInputDocument solrDoc;
++
++    /**
++     * default constructor.
++     */
++    public SolrObject() {
++        this.solrDoc = new SolrInputDocument();
++    }
++
++    @Override
++    public void set(final String field, final Object value) {
++    	// add a single valued field
++        this.solrDoc.addField(field, value);
++    }
++
++    @Override
++    public void set(final String field, final NoSQLObject<SolrInputDocument> value) {
++    	// add a single nested document
++    	this.solrDoc.addChildDocument(value.unwrap());
++    	
++    	//TODO what is with field name?
++    }
++
++    @Override
++    public void set(final String field, final Object[] values) {
++    	// add a multi valued field
++        this.solrDoc.addField(field, Arrays.asList(values));
++    }
++
++    @Override
++    public void set(final String field, final NoSQLObject<SolrInputDocument>[] values) {
++    	// add a a list of nested documents
++        final ArrayList<SolrInputDocument> list = new ArrayList<SolrInputDocument>();
++        for (final NoSQLObject<SolrInputDocument> value : values) {
++            list.add(value.unwrap());
++        }
++        this.solrDoc.addChildDocuments(list);
++        
++      //TODO what is with field name?
++    }
++
++    @Override
++    public SolrInputDocument unwrap() {
++        return this.solrDoc;
++    }
++}
+diff --git a/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrProvider.java b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrProvider.java
+new file mode 100644
+index 0000000..c52c874
+--- /dev/null
++++ b/log4j-core/src/main/java/org/apache/logging/log4j/core/appender/db/nosql/solr/SolrProvider.java
+@@ -0,0 +1,210 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements. See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache license, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License. You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the license for the specific language governing permissions and
++ * limitations under the license.
++ */
++package org.apache.logging.log4j.core.appender.db.nosql.solr;
++
++import java.net.MalformedURLException;
++
++import org.apache.logging.log4j.Logger;
++import org.apache.logging.log4j.core.appender.db.nosql.NoSQLProvider;
++import org.apache.logging.log4j.core.config.plugins.Plugin;
++import org.apache.logging.log4j.core.config.plugins.PluginAttribute;
++import org.apache.logging.log4j.core.config.plugins.PluginFactory;
++import org.apache.logging.log4j.status.StatusLogger;
++import org.apache.solr.client.solrj.SolrServer;
++import org.apache.solr.client.solrj.embedded.EmbeddedSolrServer;
++import org.apache.solr.client.solrj.impl.CloudSolrServer;
++import org.apache.solr.client.solrj.impl.HttpSolrServer;
++import org.apache.solr.client.solrj.impl.LBHttpSolrServer;
++import org.apache.solr.core.CoreContainer;
++
++/**
++ * The Apache Solr implementation of {@link NoSQLProvider}.
++ * @author Markus Klose
++ */
++@Plugin(name = "Solr", category = "Core", printObject = true)
++public final class SolrProvider implements NoSQLProvider<SolrConnection> {
++    // status logger
++	private static final Logger LOGGER = StatusLogger.getLogger();
++    
++	// solr server instance to log to
++    private final SolrServer solrServer;
++    
++    // amount of time before commit is done
++    private int commitWithinMs;
++    
++    // description of the solr provider
++    private final String description;
++    
++    // default coreName
++    private static String DEFAULT_CORENAME = "collection1";
++    
++    /**
++     * constructor of the SolrProvider.
++     * 
++     * @param solrServer
++     * 	solr server instance to log to
++     * @param commitWithinMs
++     * 	amount of time before commit is done
++     * @param description
++     * 	description of the solr provider
++     */
++    private SolrProvider(final SolrServer solrServer, int commitWithinMs, final String description) {
++        this.solrServer = solrServer;
++        this.description = "solr{ " + description + " }";
++        this.commitWithinMs = commitWithinMs;
++    }
++
++    @Override
++    public SolrConnection getConnection() {
++        return new SolrConnection(this.solrServer, this.commitWithinMs);
++    }
++
++    @Override
++    public String toString() {
++        return this.description;
++    }
++ 
++    /**
++     * Factory method for creating an Apache Solr provider within the plugin manager.
++     *
++     * @param coreName
++     * 	name of the core/collection. used by all solr server implementation ({@link HttpSolrServer}, {@link LBHttpSolrServer}, {@link CloudSolrServer}, {@link EmbeddedSolrServer}). NOT optional for {@link EmbeddedSolrServer}
++     * @param commitWithinMs
++     * 	amount of time before a commit is executed. used by all solr server implementation ({@link HttpSolrServer}, {@link LBHttpSolrServer}, {@link CloudSolrServer}, {@link EmbeddedSolrServer}).
++     * @param url 
++     * 	solr URL used by {@link HttpSolrServer}
++     * @param solrServerUrls
++     * 	comma (",") separated list of solr urls. used by {@link LBHttpSolrServer}
++     * @param zkHost
++     * 	list of zooKeeper instances to connect to. used by {@link CloudSolrServer}
++     * @param solrHome
++     * 	path to the solr home directory. used by {@link EmbeddedSolrServer}
++     * @return 
++     * 	new Apache Solr provider.
++     */
++    @PluginFactory
++    public static SolrProvider createNoSQLProvider (
++    		@PluginAttribute("coreName") final String coreName,
++    		@PluginAttribute("commitWithinMs") final String commitWithinMs,
++    		@PluginAttribute("url") final String url,
++            @PluginAttribute("solrServerUrls") final String solrServerUrls,
++            @PluginAttribute("zkHost") final String zkHost,
++            @PluginAttribute("solrHome") final String solrHome) {
++    	
++    	// init commitWithin 
++    	int commitWithin;
++    	if(commitWithinMs == null) {
++    		// default -1 -> not used by insertObject()
++    		commitWithin = -1;
++    	} else {
++    		commitWithin = Integer.parseInt(commitWithinMs);
++    	}
++    	
++    	// create the correct solr server
++    	SolrProvider solrProvider =  null;
++    	
++    	if (url != null && url.length() > 0)  {
++    		// create SolrProvider with HttpSolrServer
++    		solrProvider = getHttpSolrServer(url, coreName, commitWithin);    		
++    	} else if(solrServerUrls != null && solrServerUrls.length() > 0) {
++    		// create SolrProvider with LBHttpSolrServer
++    		solrProvider = getLBHttpSolrServer(solrServerUrls, coreName, commitWithin);
++    	} else if(zkHost != null && zkHost.length() > 0) {
++    		// create SolrProvider with CloudSolrServer
++    		solrProvider = getCloudSolrServer(zkHost, coreName, commitWithin);
++    	} else if((solrHome != null && solrHome.length() > 0) 
++    			&& (coreName != null && coreName.length() > 0)) {
++    		// create SolrProvider with EmbeddedSolrServer
++    		solrProvider = getEmbeddedSolrServer(solrHome, coreName, commitWithin);
++    	} else {
++    		// no valid configuration found
++    		LOGGER.error("No valid SolrProvider configuration found!");
++    	}
++    	
++        return solrProvider;
++    }
++    
++    
++    // helper
++    /**
++	 * create SolrProvider with HttpSolrServer.
++	 */ 
++    private static SolrProvider getHttpSolrServer(String url, String coreName, int commitWithinMs) {
++		String solrUrl = url;
++
++		// handle coreName
++    	if (coreName != null && coreName.length() > 0)  {
++    		solrUrl = url + "/" + coreName;
++    	}
++		
++		return new SolrProvider(new HttpSolrServer(solrUrl), commitWithinMs, "HttpSolrServer(\"" + solrUrl + "\")");
++    }
++    
++    /**
++	 * create SolrProvider with LBHttpSolrServer.
++	 */ 
++    private static SolrProvider getLBHttpSolrServer(String solrServerUrls, String coreName, int commitWithinMs) {
++    	String[] solrURLs = solrServerUrls.split(",");	
++    	String description = solrServerUrls;
++    	
++		// handle coreName
++    	if (coreName != null && coreName.length() > 0)  {
++    		description = "";
++    		for (int i = 0; i< solrURLs.length; i++) {
++    			solrURLs[i] = solrURLs[i] + "/" + coreName;
++    			description += "," + solrURLs[i];
++    		}
++    		description = description.replaceFirst(",", "");
++    	}
++    	
++		try {
++			return new SolrProvider(new LBHttpSolrServer(solrURLs), commitWithinMs, "LBHttpSolrServer(\"" + description + "\")");
++		} catch (MalformedURLException murlEx) {
++			// LBHttpSolrServer does not throw this exception
++    		return null;
++		}
++    }
++    
++    /**
++	 * create SolrProvider with CloudSolrServer.
++	 */ 
++    private static SolrProvider getCloudSolrServer(String zkHost, String coreName, int commitWithinMs) {
++    	SolrServer solrServer = new CloudSolrServer(zkHost);
++		String description = "CloudSolrServer(\"" + zkHost + "\")";
++		
++		// handle coreName
++		if (coreName == null || coreName.length() == 0)  {
++			coreName = DEFAULT_CORENAME;
++    	}
++		((CloudSolrServer)solrServer).setDefaultCollection(coreName);
++		description += ".setDefaultCollection(\"" + coreName + "\")";
++		
++		
++		return new SolrProvider(solrServer, commitWithinMs, description);
++    }
++    
++    /**
++ 	 * create SolrProvider with EmbeddedSolrServer.
++ 	 */ 
++     private static SolrProvider getEmbeddedSolrServer(String solrHome, String coreName, int commitWithinMs) {    	 
++    	 CoreContainer coreContainer = new CoreContainer(solrHome);
++    	 coreContainer.load();
++    	 String description = "EmbeddedSolrServer(\"" + solrHome + "\", \"" + coreName + "\")";
++ 		
++    	 return new SolrProvider(new EmbeddedSolrServer(coreContainer, coreName), commitWithinMs, description);
++     }
++}
+diff --git a/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrConnection.java b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrConnection.java
+new file mode 100644
+index 0000000..00d0727
+--- /dev/null
++++ b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrConnection.java
+@@ -0,0 +1,21 @@
++package org.apache.logging.log4j.core.appender.db.nosql.solr;
++
++import org.junit.After;
++import org.junit.Before;
++
++/**
++ * JUnit test for SolrConnection.
++ * @author Markus Klose
++ */
++public class TestSolrConnection {
++	
++	@Before
++	public void setUp() {
++	}
++
++	@After
++	public void tearDown() {
++	}
++	
++	//TODO what to test ???
++}
+diff --git a/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrObject.java b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrObject.java
+new file mode 100644
+index 0000000..c806c76
+--- /dev/null
++++ b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrObject.java
+@@ -0,0 +1,140 @@
++package org.apache.logging.log4j.core.appender.db.nosql.solr;
++
++import static org.junit.Assert.assertArrayEquals;
++import static org.junit.Assert.assertEquals;
++import static org.junit.Assert.assertNotNull;
++import static org.junit.Assert.assertNull;
++
++import org.junit.After;
++import org.junit.Before;
++import org.junit.Test;
++
++/**
++ * JUnit test for SolrObject.
++ * @author Markus Klose
++ */
++public class TestSolrObject {
++	private SolrObject solrObject;
++	
++	@Before
++	public void setUp() {
++		this.solrObject = new SolrObject();
++	}
++
++	@After
++	public void tearDown() {
++	}
++	    
++	@Test
++	public void testConstructor() {
++		SolrObject solrObject = new SolrObject();
++		assertNotNull(solrObject.unwrap());
++	}
++	
++	@Test
++	public void testSetSingleValuedField() {
++		//pre test
++		assertNull(this.solrObject.unwrap().getFieldValue("a"));
++		assertNull(this.solrObject.unwrap().getFieldValue("b"));
++		
++		// set
++		this.solrObject.set("a", "solr field");
++		this.solrObject.set("b", "another solr field");
++		
++		// test set
++		assertNotNull(this.solrObject.unwrap().getFieldValue("a"));
++		assertEquals("solr field", this.solrObject.unwrap().getFieldValue("a"));
++		assertEquals(1, this.solrObject.unwrap().getFieldValues("a").size());
++		assertNotNull(this.solrObject.unwrap().getFieldValue("b"));
++		assertEquals("another solr field", this.solrObject.unwrap().getFieldValue("b"));
++		assertEquals(1, this.solrObject.unwrap().getFieldValues("b").size());
++	}
++
++	@Test
++	public void testSetMultiValuedField() {
++		//pre test
++		assertNull(this.solrObject.unwrap().getFieldValue("a"));
++		assertNull(this.solrObject.unwrap().getFieldValue("b"));
++		
++		// set
++		String[] array1 = {"solr", "field"};
++		this.solrObject.set("a", array1);
++		String[] array2 = {"another", "solr", "field"};
++		this.solrObject.set("b", array2);
++				
++		// test set
++		assertNotNull(this.solrObject.unwrap().getFieldValue("a"));
++		assertArrayEquals(array1, this.solrObject.unwrap().getFieldValues("a").toArray());
++		assertEquals(2, this.solrObject.unwrap().getFieldValues("a").size());
++		assertNotNull(this.solrObject.unwrap().getFieldValues("b"));
++		assertArrayEquals(array2, this.solrObject.unwrap().getFieldValues("b").toArray());
++		assertEquals(3, this.solrObject.unwrap().getFieldValues("b").size());
++	}
++	
++	@Test
++	public void testSetSingleNestedDoc() {
++		//pre test
++		assertNull(this.solrObject.unwrap().getFieldValue("a"));
++		assertNull(this.solrObject.unwrap().getFieldValue("b"));
++		
++		// set
++		this.solrObject.set("a", new SolrObject());
++		this.solrObject.set("b", new SolrObject());
++				
++		// test set
++		assertNotNull(this.solrObject.unwrap().getChildDocuments());
++		assertEquals(2, this.solrObject.unwrap().getChildDocuments().size());
++		assertNull(this.solrObject.unwrap().getFieldValue("a"));
++		assertNull(this.solrObject.unwrap().getFieldValue("b"));
++	}
++	
++	@Test
++	public void testSetMultipleNestedDoc() {
++		//pre test
++		assertNull(this.solrObject.unwrap().getFieldValue("a"));
++		assertNull(this.solrObject.unwrap().getFieldValue("b"));
++						
++		// set
++		SolrObject[] array1 = {new SolrObject(), new SolrObject()};
++		this.solrObject.set("a", array1);
++		SolrObject[] array2 = {new SolrObject(), new SolrObject(), new SolrObject()};
++		this.solrObject.set("b", array2);
++						
++		// test set
++		assertNotNull(this.solrObject.unwrap().getChildDocuments());
++		assertEquals(5, this.solrObject.unwrap().getChildDocuments().size());
++		assertNull(this.solrObject.unwrap().getFieldValue("a"));
++		assertNull(this.solrObject.unwrap().getFieldValue("b"));
++	}
++	
++	@Test
++	public void testSetComplex() {
++		//pre test
++		assertNull(this.solrObject.unwrap().getFieldValue("a"));
++		assertNull(this.solrObject.unwrap().getFieldValue("b"));
++		assertNull(this.solrObject.unwrap().getFieldValue("c"));
++		assertNull(this.solrObject.unwrap().getFieldValue("d"));
++						
++		// set
++		this.solrObject.set("a", "solr field");
++		String[] array1 = {"another", "solr", "field"};
++		this.solrObject.set("b", array1);	
++		this.solrObject.set("c", new SolrObject());
++		SolrObject[] array2 = {new SolrObject(), new SolrObject(), new SolrObject()};
++		this.solrObject.set("d", array2);
++		
++		// test set
++		assertNotNull(this.solrObject.unwrap().getFieldValue("a"));
++		assertEquals("solr field", this.solrObject.unwrap().getFieldValue("a"));
++		assertEquals(1, this.solrObject.unwrap().getFieldValues("a").size());
++		
++		assertNotNull(this.solrObject.unwrap().getFieldValues("b"));
++		assertArrayEquals(array1, this.solrObject.unwrap().getFieldValues("b").toArray());
++		assertEquals(3, this.solrObject.unwrap().getFieldValues("b").size());
++		
++		assertNotNull(this.solrObject.unwrap().getChildDocuments());
++		assertEquals(4, this.solrObject.unwrap().getChildDocuments().size());
++		assertNull(this.solrObject.unwrap().getFieldValue("c"));
++		assertNull(this.solrObject.unwrap().getFieldValue("d"));
++	}
++}
+diff --git a/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrProvider.java b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrProvider.java
+new file mode 100644
+index 0000000..02198b3
+--- /dev/null
++++ b/log4j-core/src/test/java/org/apache/logging/log4j/core/appender/db/nosql/solr/TestSolrProvider.java
+@@ -0,0 +1,150 @@
++package org.apache.logging.log4j.core.appender.db.nosql.solr;
++
++import static org.junit.Assert.assertEquals;
++import static org.junit.Assert.assertNotNull;
++import static org.junit.Assert.assertNull;
++
++import org.junit.After;
++import org.junit.Before;
++import org.junit.Test;
++
++/**
++ * JUnit tests for SolrProvider.
++ * test createNoSQLProvider by reviewing the description  
++ * @author Markus Klose
++ */
++public class TestSolrProvider {
++	// provider to test
++	private SolrProvider solrProvider;
++	
++	@Before
++	public void setUp() {
++		this.solrProvider = null;
++	}
++
++	@After
++	public void tearDown() {
++	}
++	
++	@Test
++	public void testHttpSolrServer() {
++		// pre test 
++		assertNull(this.solrProvider);
++		
++		// create provider
++		this.solrProvider = SolrProvider.createNoSQLProvider(null, null, "http://localhost:8983/solr", null, null, null);
++		
++		// test provider
++		assertNotNull(this.solrProvider);
++		assertEquals("solr{ HttpSolrServer(\"http://localhost:8983/solr\") }", this.solrProvider.toString());
++	}
++	
++	@Test
++	public void testHttpSolrServerWithCore() {
++		// pre test 
++		assertNull(this.solrProvider);
++		
++		// create provider
++		this.solrProvider = SolrProvider.createNoSQLProvider("myCore", null, "http://localhost:8983/solr", null, null, null);
++		
++		// test provider
++		assertNotNull(this.solrProvider);
++		assertEquals("solr{ HttpSolrServer(\"http://localhost:8983/solr/myCore\") }", this.solrProvider.toString());
++	}
++	
++	@Test
++	public void testLBHttpSolrServer() {
++		// pre test 
++		assertNull(this.solrProvider);
++				
++		// create provider
++		this.solrProvider = SolrProvider.createNoSQLProvider(null, null, null, "http://localhost:8983/solr,http://localhost:8984/solr", null, null);
++				
++		// test provider
++		assertNotNull(this.solrProvider);
++		assertEquals("solr{ LBHttpSolrServer(\"http://localhost:8983/solr,http://localhost:8984/solr\") }", this.solrProvider.toString());
++	}
++	
++	@Test
++	public void testLBHttpSolrServerWithCore() {
++		// pre test 
++		assertNull(this.solrProvider);
++				
++		// create provider
++		this.solrProvider = SolrProvider.createNoSQLProvider("myCore", null, null, "http://localhost:8983/solr,http://localhost:8984/solr", null, null);
++				
++		// test provider
++		assertNotNull(this.solrProvider);
++		assertEquals("solr{ LBHttpSolrServer(\"http://localhost:8983/solr/myCore,http://localhost:8984/solr/myCore\") }", this.solrProvider.toString());
++	}
++	
++	@Test
++	public void testCloudSolrServer() {
++		// pre test 
++		assertNull(this.solrProvider);
++						
++		// create provider
++		this.solrProvider = SolrProvider.createNoSQLProvider(null, null, null, null, "localhost:2181", null);
++						
++		// test provider
++		assertNotNull(this.solrProvider);
++		assertEquals("solr{ CloudSolrServer(\"localhost:2181\").setDefaultCollection(\"collection1\") }", this.solrProvider.toString());
++	}
++	
++	@Test
++	public void testCloudSolrServerWithCore() {
++		// pre test 
++		assertNull(this.solrProvider);
++						
++		// create provider
++		this.solrProvider = SolrProvider.createNoSQLProvider("myCore", null, null, null, "localhost:2181", null);
++						
++		// test provider
++		assertNotNull(this.solrProvider);
++		assertEquals("solr{ CloudSolrServer(\"localhost:2181\").setDefaultCollection(\"myCore\") }", this.solrProvider.toString());
++	}
++
++	@Test
++	public void testEmbeddedSolrServer() {
++		// pre test 
++		assertNull(this.solrProvider);
++								
++		// create provider
++		String solrHome = TestSolrProvider.class.getResource("/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home").getPath();
++		this.solrProvider = SolrProvider.createNoSQLProvider("myCore", null, null, null, null, solrHome);
++								
++		// test provider
++		assertNotNull(this.solrProvider);
++		assertEquals("solr{ EmbeddedSolrServer(\"" + solrHome + "\", \"myCore\") }", this.solrProvider.toString());
++	}
++	
++	@Test
++	public void testNoValidConfiguration() {
++		// pre test 
++		assertNull(this.solrProvider);
++		
++		// create provider
++		this.solrProvider = SolrProvider.createNoSQLProvider(null, null, null, null, null, null);
++		assertNull(this.solrProvider);
++		
++		//empty coreName
++		this.solrProvider = SolrProvider.createNoSQLProvider(null, null, "", null, null, null);
++		assertNull(this.solrProvider);
++		
++		// empty url
++		this.solrProvider = SolrProvider.createNoSQLProvider("", null, null, null, null, null);
++		assertNull(this.solrProvider);
++
++		// empty list of Solr server
++		this.solrProvider = SolrProvider.createNoSQLProvider(null, null, null, "", null, null);
++		assertNull(this.solrProvider);
++		
++		// empty zkHost
++		this.solrProvider = SolrProvider.createNoSQLProvider(null, null, null, null, "", null);
++		assertNull(this.solrProvider);
++		
++		// empty solrHome
++		this.solrProvider = SolrProvider.createNoSQLProvider(null, null, null, null, null, "");
++		assertNull(this.solrProvider);
++	}
++}
+diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.html b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.html
+new file mode 100644
+index 0000000..8f2b32a
+--- /dev/null
++++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.html
+@@ -0,0 +1,24 @@
++<!--
++ Licensed to the Apache Software Foundation (ASF) under one or more
++ contributor license agreements.  See the NOTICE file distributed with
++ this work for additional information regarding copyright ownership.
++ The ASF licenses this file to You under the Apache License, Version 2.0
++ (the "License"); you may not use this file except in compliance with
++ the License.  You may obtain a copy of the License at
++
++     http://www.apache.org/licenses/LICENSE-2.0
++
++ Unless required by applicable law or agreed to in writing, software
++ distributed under the License is distributed on an "AS IS" BASIS,
++ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ See the License for the specific language governing permissions and
++ limitations under the License.
++-->
++
++<!-- The content of this page will be statically included into the top-
++right box of the cores overview page. Uncomment this as an example to 
++see there the content will show up.
++
++<img src="img/ico/construction.png"> This line will appear at the top-
++right box on collection1's Overview
++-->
+diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-bottom.html b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-bottom.html
+new file mode 100644
+index 0000000..5f5eddd
+--- /dev/null
++++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-bottom.html
+@@ -0,0 +1,25 @@
++<!--
++ Licensed to the Apache Software Foundation (ASF) under one or more
++ contributor license agreements.  See the NOTICE file distributed with
++ this work for additional information regarding copyright ownership.
++ The ASF licenses this file to You under the Apache License, Version 2.0
++ (the "License"); you may not use this file except in compliance with
++ the License.  You may obtain a copy of the License at
++
++     http://www.apache.org/licenses/LICENSE-2.0
++
++ Unless required by applicable law or agreed to in writing, software
++ distributed under the License is distributed on an "AS IS" BASIS,
++ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ See the License for the specific language governing permissions and
++ limitations under the License.
++-->
++
++<!-- admin-extra.menu-bottom.html -->
++<!--
++<li>
++  <a href="#" style="background-image: url(img/ico/construction.png);">
++    LAST ITEM
++  </a>
++</li>
++-->
+diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-top.html b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-top.html
+new file mode 100644
+index 0000000..6c980eb
+--- /dev/null
++++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/admin-extra.menu-top.html
+@@ -0,0 +1,25 @@
++<!--
++ Licensed to the Apache Software Foundation (ASF) under one or more
++ contributor license agreements.  See the NOTICE file distributed with
++ this work for additional information regarding copyright ownership.
++ The ASF licenses this file to You under the Apache License, Version 2.0
++ (the "License"); you may not use this file except in compliance with
++ the License.  You may obtain a copy of the License at
++
++     http://www.apache.org/licenses/LICENSE-2.0
++
++ Unless required by applicable law or agreed to in writing, software
++ distributed under the License is distributed on an "AS IS" BASIS,
++ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ See the License for the specific language governing permissions and
++ limitations under the License.
++-->
++
++<!-- admin-extra.menu-top.html -->
++<!--
++<li>
++  <a href="#" style="background-image: url(img/ico/construction.png);">
++    FIRST ITEM
++  </a>
++</li>
++-->
+diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/schema.xml b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/schema.xml
+new file mode 100644
+index 0000000..97c25cf
+--- /dev/null
++++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/schema.xml
+@@ -0,0 +1,173 @@
++<?xml version="1.0" encoding="UTF-8" ?>
++<!--
++ Licensed to the Apache Software Foundation (ASF) under one or more
++ contributor license agreements.  See the NOTICE file distributed with
++ this work for additional information regarding copyright ownership.
++ The ASF licenses this file to You under the Apache License, Version 2.0
++ (the "License"); you may not use this file except in compliance with
++ the License.  You may obtain a copy of the License at
++
++     http://www.apache.org/licenses/LICENSE-2.0
++
++ Unless required by applicable law or agreed to in writing, software
++ distributed under the License is distributed on an "AS IS" BASIS,
++ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ See the License for the specific language governing permissions and
++ limitations under the License.
++-->
++
++<!--  
++ This is the Solr schema file. This file should be named "schema.xml" and
++ should be in the conf directory under the solr home
++ (i.e. ./solr/conf/schema.xml by default) 
++ or located where the classloader for the Solr webapp can find it.
++
++ This example schema is the recommended starting point for users.
++ It should be kept correct and concise, usable out-of-the-box.
++
++ For more information, on how to customize this file, please see
++ http://wiki.apache.org/solr/SchemaXml
++
++ PERFORMANCE NOTE: this schema includes many optional features and should not
++ be used for benchmarking.  To improve performance one could
++  - set stored="false" for all fields possible (esp large fields) when you
++    only need to search on the field but don't need to return the original
++    value.
++  - set indexed="false" if you don't need to search on the field, but only
++    return the field as a result of searching on other indexed fields.
++  - remove all unneeded copyField statements
++  - for best index size and searching performance, set "index" to false
++    for all general text fields, use copyField to copy them to the
++    catchall "text" field, and use that for searching.
++  - For maximum indexing performance, use the StreamingUpdateSolrServer
++    java client.
++  - Remember to run the JVM in server mode, and use a higher logging level
++    that avoids logging every request
++-->
++
++<schema name="example" version="1.5">
++  <!-- attribute "name" is the name of this schema and is only used for display purposes.
++       version="x.y" is Solr's version number for the schema syntax and 
++       semantics.  It should not normally be changed by applications.
++
++       1.0: multiValued attribute did not exist, all fields are multiValued 
++            by nature
++       1.1: multiValued attribute introduced, false by default 
++       1.2: omitTermFreqAndPositions attribute introduced, true by default 
++            except for text fields.
++       1.3: removed optional field compress feature
++       1.4: autoGeneratePhraseQueries attribute introduced to drive QueryParser
++            behavior when a single string produces multiple tokens.  Defaults 
++            to off for version >= 1.4
++       1.5: omitNorms defaults to true for primitive field types 
++            (int, float, boolean, string...)
++     -->
++
++<fields>
++   <!-- Valid attributes for fields:
++     name: mandatory - the name for the field
++     type: mandatory - the name of a field type from the 
++       <types> fieldType section
++     indexed: true if this field should be indexed (searchable or sortable)
++     stored: true if this field should be retrievable
++     docValues: true if this field should have doc values. Doc values are
++       useful for faceting, grouping, sorting and function queries. Although not
++       required, doc values will make the index faster to load, more
++       NRT-friendly and more memory-efficient. They however come with some
++       limitations: they are currently only supported by StrField, UUIDField
++       and all Trie*Fields, and depending on the field type, they might
++       require the field to be single-valued, be required or have a default
++       value (check the documentation of the field type you're interested in
++       for more information)
++     multiValued: true if this field may contain multiple values per document
++     omitNorms: (expert) set to true to omit the norms associated with
++       this field (this disables length normalization and index-time
++       boosting for the field, and saves some memory).  Only full-text
++       fields or fields that need an index-time boost need norms.
++       Norms are omitted for primitive (non-analyzed) types by default.
++     termVectors: [false] set to true to store the term vector for a
++       given field.
++       When using MoreLikeThis, fields used for similarity should be
++       stored for best performance.
++     termPositions: Store position information with the term vector.  
++       This will increase storage costs.
++     termOffsets: Store offset information with the term vector. This 
++       will increase storage costs.
++     required: The field is required.  It will throw an error if the
++       value does not exist
++     default: a value that should be used if no value is specified
++       when adding a document.
++   -->
++
++   <!-- field names should consist of alphanumeric or underscore characters only and
++      not start with a digit.  This is not currently strictly enforced,
++      but other field names will not have first class support from all components
++      and back compatibility is not guaranteed.  Names with both leading and
++      trailing underscores (e.g. _version_) are reserved.
++   -->
++
++   <!-- If you remove this field, you must _also_ disable the update log in solrconfig.xml
++      or Solr won't start. _version_ and update log are required for SolrCloud
++   --> 
++   <field name="_version_" type="long" indexed="true" stored="true"/>
++   
++   <!-- points to the root document of a block of nested documents. Required for nested
++      document support, may be removed otherwise
++   -->
++   <field name="_root_" type="string" indexed="true" stored="false"/>
++
++   <!-- typical log4j fields -->
++   <field name="className" type="string" indexed="true" stored="true"/>
++   <field name="date" type="date" indexed="true" stored="true"/>
++   <field name="fileName" type="string" indexed="true" stored="true"/>
++   <field name="level" type="string" indexed="true" stored="true"/>
++   <field name="lineNumber" type="int" indexed="true" stored="true"/>
++   <field name="loggerName" type="string" indexed="true" stored="true"/>
++   <field name="message" type="text" indexed="true" stored="true"/>
++   <field name="methodName" type="string" indexed="true" stored="true"/>
++   <field name="millis" type="long" indexed="true" stored="true"/>
++   <field name="threadName" type="string" indexed="true" stored="true"/>
++   
++   <dynamicField name="*" type="string" indexed="true" stored="true" multiValued="true"/>
++
++ </fields>
++
++  <types>
++   <!-- The StrField type is not analyzed, but indexed/stored verbatim.
++       It supports doc values but in that case the field needs to be
++       single-valued and either required or have a default value.
++      -->
++    <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
++
++    <!--
++      Default numeric field types. For faster range queries, consider the tint/tfloat/tlong/tdouble types.
++
++      These fields support doc values, but they require the field to be
++      single-valued and either be required or have a default value.
++    -->
++    <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
++    <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
++    <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
++    <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
++	
++	<!-- The format for this date field is of the form 1995-12-31T23:59:59Z, and
++         is a more restricted form of the canonical representation of dateTime
++         http://www.w3.org/TR/xmlschema-2/#dateTime    
++         The trailing "Z" designates UTC time and is mandatory.
++         Optional fractional seconds are allowed: 1995-12-31T23:59:59.999Z
++         All other components are mandatory.
++      -->
++    <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
++
++    <!-- A Trie based date field for faster date range queries and date faceting. -->
++    <fieldType name="tdate" class="solr.TrieDateField" precisionStep="6" positionIncrementGap="0"/>
++
++	<fieldType name="text" class="solr.TextField" positionIncrementGap="100">
++      <analyzer>
++        <tokenizer class="solr.StandardTokenizerFactory"/>
++        <filter class="solr.LowerCaseFilterFactory"/>
++      </analyzer>
++    </fieldType>
++ </types>
++
++</schema>
+diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/solrconfig.xml b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/solrconfig.xml
+new file mode 100644
+index 0000000..ad040c4
+--- /dev/null
++++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/conf/solrconfig.xml
+@@ -0,0 +1,209 @@
++<?xml version="1.0" encoding="UTF-8" ?>
++<!--
++ Licensed to the Apache Software Foundation (ASF) under one or more
++ contributor license agreements.  See the NOTICE file distributed with
++ this work for additional information regarding copyright ownership.
++ The ASF licenses this file to You under the Apache License, Version 2.0
++ (the "License"); you may not use this file except in compliance with
++ the License.  You may obtain a copy of the License at
++
++     http://www.apache.org/licenses/LICENSE-2.0
++
++ Unless required by applicable law or agreed to in writing, software
++ distributed under the License is distributed on an "AS IS" BASIS,
++ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ See the License for the specific language governing permissions and
++ limitations under the License.
++-->
++
++<!-- 
++     For more details about configurations options that may appear in
++     this file, see http://wiki.apache.org/solr/SolrConfigXml. 
++-->
++<config>
++  <!-- Controls what version of Lucene various components of Solr
++       adhere to.  Generally, you want to use the latest version to
++       get all bug fixes and improvements. It is highly recommended
++       that you fully re-index after changing this setting as it can
++       affect both how text is indexed and queried.
++  -->
++  <luceneMatchVersion>4.7</luceneMatchVersion>
++
++  <!-- Data Directory
++
++       Used to specify an alternate directory to hold all index data
++       other than the default ./data under the Solr home.  If
++       replication is in use, this should match the replication
++       configuration.
++    -->
++  <dataDir>${solr.data.dir:}</dataDir>
++
++
++  <!-- The DirectoryFactory to use for indexes.
++       
++       solr.StandardDirectoryFactory is filesystem
++       based and tries to pick the best implementation for the current
++       JVM and platform.  solr.NRTCachingDirectoryFactory, the default,
++       wraps solr.StandardDirectoryFactory and caches small files in memory
++       for better NRT performance.
++
++       One can force a particular implementation via solr.MMapDirectoryFactory,
++       solr.NIOFSDirectoryFactory, or solr.SimpleFSDirectoryFactory.
++
++       solr.RAMDirectoryFactory is memory based, not
++       persistent, and doesn't work with replication.
++    -->
++  <directoryFactory name="DirectoryFactory" 
++                    class="${solr.directoryFactory:solr.NRTCachingDirectoryFactory}">
++  </directoryFactory> 
++
++  <codecFactory class="solr.SchemaCodecFactory"/>
++
++  <schemaFactory class="ClassicIndexSchemaFactory"/>
++
++  <indexConfig>
++  </indexConfig>
++
++  <jmx />
++
++  <!-- The default high-performance update handler -->
++  <updateHandler class="solr.DirectUpdateHandler2">
++
++    <!-- Enables a transaction log, used for real-time get, durability, and
++         and solr cloud replica recovery.  The log can grow as big as
++         uncommitted changes to the index, so use of a hard autoCommit
++         is recommended (see below).
++         "dir" - the target directory for transaction logs, defaults to the
++                solr data directory.  --> 
++    <updateLog>
++      <str name="dir">${solr.ulog.dir:}</str>
++    </updateLog>
++ 
++     <autoCommit> 
++       <maxTime>${solr.autoCommit.maxTime:15000}</maxTime> 
++       <openSearcher>false</openSearcher> 
++     </autoCommit>
++
++     <autoSoftCommit> 
++       <maxTime>${solr.autoSoftCommit.maxTime:-1}</maxTime> 
++     </autoSoftCommit>
++
++  </updateHandler>
++  
++  <query>
++    <maxBooleanClauses>1024</maxBooleanClauses>
++    <filterCache class="solr.FastLRUCache"
++                 size="512"
++                 initialSize="512"
++                 autowarmCount="0"/>
++	<queryResultCache class="solr.LRUCache"
++                     size="512"
++                     initialSize="512"
++                     autowarmCount="0"/>
++    <documentCache class="solr.LRUCache"
++                   size="512"
++                   initialSize="512"
++                   autowarmCount="0"/>
++    <cache name="perSegFilter"
++      class="solr.search.LRUCache"
++      size="10"
++      initialSize="0"
++      autowarmCount="10"
++      regenerator="solr.NoOpRegenerator" />
++
++   <enableLazyFieldLoading>true</enableLazyFieldLoading>
++   <queryResultWindowSize>20</queryResultWindowSize>
++   <queryResultMaxDocsCached>200</queryResultMaxDocsCached>
++ 
++  <listener event="newSearcher" class="solr.QuerySenderListener">
++      <arr name="queries">
++        <!--
++           <lst><str name="q">solr</str><str name="sort">price asc</str></lst>
++           <lst><str name="q">rocks</str><str name="sort">weight asc</str></lst>
++          -->
++      </arr>
++    </listener>
++    <listener event="firstSearcher" class="solr.QuerySenderListener">
++      <arr name="queries">
++        <lst>
++          <str name="q">static firstSearcher warming in solrconfig.xml</str>
++        </lst>
++      </arr>
++    </listener>
++    <useColdSearcher>false</useColdSearcher>
++    <maxWarmingSearchers>2</maxWarmingSearchers>
++  </query>
++
++  <requestDispatcher handleSelect="false" > 
++    <requestParsers enableRemoteStreaming="true" 
++                    multipartUploadLimitInKB="2048000"
++                    formdataUploadLimitInKB="2048"
++                    addHttpRequestToContext="false"/>
++
++    <httpCaching never304="true" />
++  </requestDispatcher>
++
++  <requestHandler name="/select" class="solr.SearchHandler">
++     <lst name="defaults">
++       <str name="echoParams">explicit</str>
++       <int name="rows">10</int>
++       <str name="df">text</str>
++     </lst>
++    </requestHandler>
++
++  <!-- A request handler that returns indented JSON by default -->
++  <requestHandler name="/query" class="solr.SearchHandler">
++     <lst name="defaults">
++       <str name="echoParams">explicit</str>
++       <str name="wt">json</str>
++       <str name="indent">true</str>
++       <str name="df">text</str>
++     </lst>
++  </requestHandler>
++
++  <requestHandler name="/get" class="solr.RealTimeGetHandler">
++     <lst name="defaults">
++       <str name="omitHeader">true</str>
++       <str name="wt">json</str>
++       <str name="indent">true</str>
++     </lst>
++  </requestHandler>
++
++  <requestHandler name="/update" class="solr.UpdateRequestHandler">
++  </requestHandler>
++
++  <requestHandler name="/analysis/field" 
++                  startup="lazy"
++                  class="solr.FieldAnalysisRequestHandler" />
++  <requestHandler name="/analysis/document" 
++                  class="solr.DocumentAnalysisRequestHandler" 
++                  startup="lazy" />
++  <requestHandler name="/admin/" 
++                  class="solr.admin.AdminHandlers" />
++  <!-- ping/healthcheck -->
++  <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
++    <lst name="invariants">
++      <str name="q">solrpingquery</str>
++    </lst>
++    <lst name="defaults">
++      <str name="echoParams">all</str>
++    </lst>
++  </requestHandler>
++
++  <!-- Echo the request contents back to the client -->
++  <requestHandler name="/debug/dump" class="solr.DumpRequestHandler" >
++    <lst name="defaults">
++     <str name="echoParams">explicit</str> 
++     <str name="echoHandler">true</str>
++    </lst>
++  </requestHandler>
++
++  <requestHandler name="/replication" class="solr.ReplicationHandler" > 
++  </requestHandler>
++
++  <!-- Legacy config for the admin interface -->
++  <admin>
++    <defaultQuery>*:*</defaultQuery>
++  </admin>
++
++</config>
+diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/core.properties b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/core.properties
+new file mode 100644
+index 0000000..a70b08d
+--- /dev/null
++++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/collection1/core.properties
+@@ -0,0 +1 @@
++name=collection1
+diff --git a/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/solr.xml b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/solr.xml
+new file mode 100644
+index 0000000..e8bdfb4
+--- /dev/null
++++ b/log4j-core/src/test/resources/org/apache/logging/log4j/core/appender/db/nosql/solr/solr_home/solr.xml
+@@ -0,0 +1,45 @@
++<?xml version="1.0" encoding="UTF-8" ?>
++<!--
++ Licensed to the Apache Software Foundation (ASF) under one or more
++ contributor license agreements.  See the NOTICE file distributed with
++ this work for additional information regarding copyright ownership.
++ The ASF licenses this file to You under the Apache License, Version 2.0
++ (the "License"); you may not use this file except in compliance with
++ the License.  You may obtain a copy of the License at
++
++     http://www.apache.org/licenses/LICENSE-2.0
++
++ Unless required by applicable law or agreed to in writing, software
++ distributed under the License is distributed on an "AS IS" BASIS,
++ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ See the License for the specific language governing permissions and
++ limitations under the License.
++-->
++
++<!--
++   This is an example of a simple "solr.xml" file for configuring one or 
++   more Solr Cores, as well as allowing Cores to be added, removed, and 
++   reloaded via HTTP requests.
++
++   More information about options available in this configuration file, 
++   and Solr Core administration can be found online:
++   http://wiki.apache.org/solr/CoreAdmin
++-->
++
++<solr>
++
++  <solrcloud>
++    <str name="host">${host:}</str>
++    <int name="hostPort">${jetty.port:8983}</int>
++    <str name="hostContext">${hostContext:solr}</str>
++    <int name="zkClientTimeout">${zkClientTimeout:30000}</int>
++    <bool name="genericCoreNodeNames">${genericCoreNodeNames:true}</bool>
++  </solrcloud>
++
++  <shardHandlerFactory name="shardHandlerFactory"
++    class="HttpShardHandlerFactory">
++    <int name="socketTimeout">${socketTimeout:0}</int>
++    <int name="connTimeout">${connTimeout:0}</int>
++  </shardHandlerFactory>
++
++</solr>
