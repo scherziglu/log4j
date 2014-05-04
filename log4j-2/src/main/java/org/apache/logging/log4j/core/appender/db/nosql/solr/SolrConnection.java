@@ -28,21 +28,21 @@ import org.apache.solr.common.SolrInputDocument;
 
 /**
  * The Apache Solr implementation of {@link NoSQLConnection}.
- * @author Markus Klose
  */
-public final class SolrConnection implements NoSQLConnection<SolrInputDocument, SolrObject> {
-	// solr server instance to log to
-	private final SolrServer solrServer;
-	//  amount of time before commit is done
-	private int commitWithinMs;
-	
+public final class SolrConnection implements
+        NoSQLConnection<SolrInputDocument, SolrObject> {
+    // solr server instance to log to
+    private final SolrServer solrServer;
+    // amount of time before commit is done
+    private int commitWithinMs;
+
     /**
      * default constructor.
      * 
      * @param solrServer
-     * 	solr server instance to log to
+     *            solr server instance to log to
      * @param commitWithinMs
-     * 	amount of time before commit is done
+     *            amount of time before commit is done
      */
     public SolrConnection(final SolrServer solrServer, int commitWithinMs) {
         this.solrServer = solrServer;
@@ -61,31 +61,39 @@ public final class SolrConnection implements NoSQLConnection<SolrInputDocument, 
 
     @Override
     public void insertObject(final NoSQLObject<SolrInputDocument> object) {
-    	try {
-    		UpdateResponse response;
-    		// if commitWithinMs was specified ... use it
-    		if (commitWithinMs < 0) {
-    			response = this.solrServer.add(object.unwrap());
-    		} else {
-    			response = this.solrServer.add(object.unwrap(), commitWithinMs);
-    		}
-    		
-    		// check if solr response shows error
-			if (response.getStatus() !=  0) {
-				throw new AppenderLoggingException("Failed to write log event to Solr. Request Status is: " + response.getStatus());
-			}
-		} catch (SolrServerException | IOException e) {
-			throw new AppenderLoggingException("Failed to write log event to Solr due to error: " + e.getMessage(), e);
-		}
+        try {
+            UpdateResponse response;
+            // if commitWithinMs was specified ... use it
+            if (commitWithinMs < 0) {
+                response = this.solrServer.add(object.unwrap());
+            } else {
+                response = this.solrServer.add(object.unwrap(), commitWithinMs);
+            }
+
+            // check if solr response shows error
+            if (response.getStatus() != 0) {
+                throw new AppenderLoggingException(
+                        "Failed to write log event to Solr. Request Status is: "
+                                + response.getStatus());
+            }
+        } catch (SolrServerException e) {
+            throw new AppenderLoggingException(
+                    "Failed to write log event to Solr due to error: "
+                            + e.getMessage(), e);
+        } catch (IOException e) {
+            throw new AppenderLoggingException(
+                    "Failed to write log event to Solr due to error: "
+                            + e.getMessage(), e);
+        }
     }
 
     @Override
     public synchronized void close() {
-    	// there is nothing to do 
+        // there is nothing to do
     }
 
     @Override
     public synchronized boolean isClosed() {
-    	return false;
+        return false;
     }
 }

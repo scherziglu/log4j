@@ -22,13 +22,12 @@ import org.apache.logging.log4j.core.appender.db.nosql.NoSQLObject;
 import org.apache.solr.common.SolrInputDocument;
 
 /**
- * The Apache Solr implementation of {@link NoSQLObject}.
- * its a wrapper class for the SolrInputDocument.
- * @author Markus Klose
+ * The Apache Solr implementation of {@link NoSQLObject}. its a wrapper class
+ * for the SolrInputDocument.
  */
 public final class SolrObject implements NoSQLObject<SolrInputDocument> {
     // solr document
-	private final SolrInputDocument solrDoc;
+    private final SolrInputDocument solrDoc;
 
     /**
      * default constructor.
@@ -39,34 +38,36 @@ public final class SolrObject implements NoSQLObject<SolrInputDocument> {
 
     @Override
     public void set(final String field, final Object value) {
-    	// add a single valued field
+        // add a single valued field
         this.solrDoc.addField(field, value);
     }
 
     @Override
-    public void set(final String field, final NoSQLObject<SolrInputDocument> value) {
-    	// add a single nested document
-    	this.solrDoc.addChildDocument(value.unwrap());
-    	
-    	//TODO what is with field name?
+    public void set(final String field,
+            final NoSQLObject<SolrInputDocument> value) {
+        // add a single nested document
+        this.solrDoc.addChildDocument(value.unwrap());
+
+        // TODO what is with field name?
     }
 
     @Override
     public void set(final String field, final Object[] values) {
-    	// add a multi valued field
+        // add a multi valued field
         this.solrDoc.addField(field, Arrays.asList(values));
     }
 
     @Override
-    public void set(final String field, final NoSQLObject<SolrInputDocument>[] values) {
-    	// add a a list of nested documents
+    public void set(final String field,
+            final NoSQLObject<SolrInputDocument>[] values) {
+        // add a a list of nested documents
         final ArrayList<SolrInputDocument> list = new ArrayList<SolrInputDocument>();
         for (final NoSQLObject<SolrInputDocument> value : values) {
             list.add(value.unwrap());
         }
         this.solrDoc.addChildDocuments(list);
-        
-      //TODO what is with field name?
+
+        // TODO what is with field name?
     }
 
     @Override
