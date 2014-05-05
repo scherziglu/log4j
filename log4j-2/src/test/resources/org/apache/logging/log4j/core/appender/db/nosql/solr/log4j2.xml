@@ -26,7 +26,6 @@
  	<NoSql name="EmbeddedSolrServerAppender">
  		<Solr solrHome="./target/test-classes/solr_home" coreName="collection1" commitWithinMs="1000"/>
  	</NoSql>
- 	
         
   </Appenders>
   <Loggers>
@@ -53,6 +52,9 @@
 	</Logger>
 	<Logger name="EmbeddedSolrServer" level="DEBUG">
 		<AppenderRef ref="EmbeddedSolrServerAppender"/>
+	</Logger>
+	<Logger name="MongoDB" level="ERROR">
+		<AppenderRef ref="MongoDBAppender"/>
 	</Logger>
   </Loggers>
 </Configuration>

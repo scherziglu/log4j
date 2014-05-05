@@ -32,9 +32,7 @@ public class TestSolrAppender {
     public static void init() {
         try {
             // read log4j configuration from xml
-            InputStream in = new FileInputStream(
-                    new File(TestSolrAppender.class.getResource("/log4j2.xml")
-                            .getPath()));
+            InputStream in = new FileInputStream(new File(TestSolrAppender.class.getResource("./log4j2.xml").getPath()));
             ConfigurationFactory factory = new XMLConfigurationFactory();
             Configuration configuration = factory
                     .getConfiguration(new ConfigurationSource(in));

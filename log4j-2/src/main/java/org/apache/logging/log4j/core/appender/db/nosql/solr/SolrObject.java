@@ -18,6 +18,7 @@ package org.apache.logging.log4j.core.appender.db.nosql.solr;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
 import org.apache.logging.log4j.core.appender.db.nosql.NoSQLObject;
 import org.apache.solr.common.SolrInputDocument;
 
