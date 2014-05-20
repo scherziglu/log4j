@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+
+ 	<NoSql name="HttpSolrServerAppender">
+		<Solr url="http://localhost:8983/solr" commitWithinMs="1000"/>
+ 	</NoSql>
+  	<NoSql name="HttpSolrServerWithCoreAppender">
+		<Solr url="http://localhost:8983/solr" coreName="collection1" commitWithinMs="1000"/>
+ 	</NoSql>
+ 	<NoSql name="LBHttpSolrServerAppender">
+		<Solr solrServerUrls="http://localhost:8983/solr,http://localhost:8984/solr" commitWithinMs="1000"/>
+ 	</NoSql>
+ 	<NoSql name="LBHttpSolrServerWithCoreAppender">
+		<Solr solrServerUrls="http://localhost:8983/solr,http://localhost:8984/solr" coreName="collection1" commitWithinMs="1000"/>
+ 	</NoSql>
+ 	<NoSql name="CloudSolrServerAppender">
+		<Solr zkHost="localhost:2181" commitWithinMs="1000"/>
+ 	</NoSql>
+ 	<NoSql name="CloudSolrServerWithCoreAppender">
+		<Solr zkHost="localhost:2181" coreName="collection1" commitWithinMs="1000"/>
+ 	</NoSql>
+ 	<NoSql name="EmbeddedSolrServerAppender">
+ 		<Solr solrHome="./target/test-classes/solr_home" coreName="collection1" commitWithinMs="1000"/>
+ 	</NoSql>  
+  </Appenders>
+  <Loggers>
+    <Root level="DEBUG">
+      <AppenderRef ref="Console" level="DEBUG"/>
+    </Root>
+    <Logger name="HttpSolrServer" level="DEBUG">
+		<AppenderRef ref="HttpSolrServerAppender"/>
+	</Logger>	
+	<Logger name="HttpSolrServerWithCore" level="DEBUG">
+		<AppenderRef ref="HttpSolrServerWithCoreAppender"/>
+	</Logger>
+	<Logger name="LBHttpSolrServer" level="DEBUG">
+		<AppenderRef ref="LBHttpSolrServerAppender"/>
+	</Logger>
+	<Logger name="LBHttpSolrServerWithCore" level="DEBUG">
+		<AppenderRef ref="LBHttpSolrServerWithCoreAppender"/>
+	</Logger>
+	<Logger name="CloudSolrServer" level="DEBUG">
+		<AppenderRef ref="CloudSolrServerAppender"/>
+	</Logger>
+	<Logger name="CloudSolrServerWithCore" level="DEBUG">
+		<AppenderRef ref="CloudSolrServerWithCoreAppender"/>
+	</Logger>
+	<Logger name="EmbeddedSolrServer" level="DEBUG">
+		<AppenderRef ref="EmbeddedSolrServerAppender"/>
+	</Logger>
+  </Loggers>
+</Configuration>
